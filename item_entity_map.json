@@ -1,0 +1,125 @@
+{
+  "generated_at": "2026-06-05T17:56:49.726Z",
+  "item_entity_map": [
+    {
+      "item_id": "970a240cee83cdff96f33cb17ae47227d1ff4ecf",
+      "entity_id": "upload_page_ownership_74a86301"
+    },
+    {
+      "item_id": "86dd9e8b2734b57a2fa42d66f18293ae9b91ef76",
+      "entity_id": "document_versioning_strategy_8da8d18d"
+    },
+    {
+      "item_id": "e07a7214910e3cceb7046a5bab915c63fdaf9712",
+      "entity_id": "user_document_upload_workflow_91df1553"
+    },
+    {
+      "item_id": "278bc703e4fb066e6400ff14e11284eabae7d0ac",
+      "entity_id": "supported_file_formats_11a47af5"
+    },
+    {
+      "item_id": "e21d7582f16279e36654600bc13c4e1609d6331e",
+      "entity_id": "upload_input_validation_and_error_handli_ef761fd5"
+    },
+    {
+      "item_id": "cac1056ec2af7cfbe14ff8137f22e649f4bc76a3",
+      "entity_id": "network_interruption_during_upload_14d39789"
+    },
+    {
+      "item_id": "76229fc5c8ed59abd50ad5a15ac77d2bb907cfb0",
+      "entity_id": "persisted_document_metadata_4a2c2ef9"
+    },
+    {
+      "item_id": "0684b2d5645e6537e0700314d6cd3c47cfe664ba",
+      "entity_id": "service_dependencies_17d5df36"
+    },
+    {
+      "item_id": "6fd9f2eb0b68de82647ae889109d00f13fdaa92e",
+      "entity_id": "asynchronous_extraction_process_b63bca6f"
+    },
+    {
+      "item_id": "bad583465c327e1cf944e33ba12d9a40beba5699",
+      "entity_id": "define_batch_upload_limits_b15ea7a9"
+    },
+    {
+      "item_id": "fceb0f1e0014b64d9766a1b3961aaa320121204d",
+      "entity_id": "resolve_open_questions_on_upload_behavio_ce973260"
+    },
+    {
+      "item_id": "9dfb8d9a1bbf7bc20dcb12b14a36924afa65a800",
+      "entity_id": "plan_for_future_ingestion_sources_3b83e936"
+    },
+    {
+      "item_id": "ecd3c563970c2b39d2f49476bc9e36d704612224",
+      "entity_id": "challenge_to_never_overwrite_rule_968eb641"
+    },
+    {
+      "item_id": "825108d8d1440d84e1251c843255e1b93d4b895a",
+      "entity_id": "finalize_upload_status_definitions_09174b61"
+    },
+    {
+      "item_id": "bdf144e2666fe2ee14101e858e424bd2a2e87dec",
+      "entity_id": "generate_knowledge_diff_workflow_1290edf0"
+    },
+    {
+      "item_id": "8bddc58515fd0975cdf1736f2e2c8a6e370bbfb8",
+      "entity_id": "default_comparison_versions_891d15c3"
+    },
+    {
+      "item_id": "0c2d9924c8be84f29533283120ec6dc954c1a184",
+      "entity_id": "handling_of_wording_only_changes_47a59c9f"
+    },
+    {
+      "item_id": "21c3a3d9d6fec2d3562014e5f737601cebd3fe30",
+      "entity_id": "read_only_comparison_view_5fa93f65"
+    },
+    {
+      "item_id": "29287e7ae564c74580d11ba2df15103d7ad89d47",
+      "entity_id": "handling_for_single_version_documents_90cafc8f"
+    },
+    {
+      "item_id": "078ce491cbf411b97e0d5a9faee5ea1505ecd1ee",
+      "entity_id": "display_logic_for_change_reasons_529d27c1"
+    },
+    {
+      "item_id": "21bd8daffc81035ec3ba9ea770ee0607d96a875b",
+      "entity_id": "error_handling_for_same_version_comparis_185be21c"
+    },
+    {
+      "item_id": "5f65006d7e71673321c1ff847c0a3643925d2523",
+      "entity_id": "cost_of_auto_run_compare_feature_63e1b19c"
+    },
+    {
+      "item_id": "3288dd259a02ad28a6ea84651fb37ad3772bcbde",
+      "entity_id": "user_confusion_with_non_adjacent_version_b61a305c"
+    },
+    {
+      "item_id": "27a4c409fd85af3fdea7d56ec8f01a6bcaa202d1",
+      "entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e"
+    },
+    {
+      "item_id": "47c7fa2dd694644d15caca8be8845ed3cbe6577b",
+      "entity_id": "model_timeout_during_analysis_2ecad586"
+    },
+    {
+      "item_id": "9d109de94a666fdb2961cc47667748d9af9c87fc",
+      "entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea"
+    },
+    {
+      "item_id": "f93dc2f8e4b036629b844e26d4cdfa025f7b8e12",
+      "entity_id": "decide_on_strict_diff_mode_32d5e74c"
+    },
+    {
+      "item_id": "fc368f3d023c65f0e31c1ba4eee4012fdd90320b",
+      "entity_id": "add_warning_for_missing_extraction_data_55e8ca0c"
+    },
+    {
+      "item_id": "08fa4d75e8d3fd3e1f155b04175fc6175fc02ac7",
+      "entity_id": "evaluate_including_link_changes_in_diff_6954b886"
+    },
+    {
+      "item_id": "115bb09be42ff712e1e50c6c24a0783be6c38ed1",
+      "entity_id": "decide_on_report_download_feature_12fbbf7f"
+    }
+  ]
+}

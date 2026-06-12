@@ -1,0 +1,992 @@
+{
+  "generated_at": "2026-06-06T06:29:04.166Z",
+  "summary": {
+    "total_entities": 30,
+    "total_relationships": 134,
+    "scenarios_generated": 5
+  },
+  "scenarios": [
+    {
+      "changed_entity_id": "document_versioning_strategy_8da8d18d",
+      "changed_entity_name": "document versioning strategy",
+      "impacted_entities": [
+        {
+          "entity_id": "asynchronous_extraction_process_b63bca6f",
+          "canonical_name": "asynchronous extraction process",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity B's description states: 'document extraction is an asynchronous process that begins immediately after a successful upload.'",
+            "Entity A's description states: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version...'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "generate_knowledge_diff_workflow_1290edf0",
+          "canonical_name": "generate knowledge diff workflow",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A's description states: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version...'.",
+            "Entity B's description details a process where a user 'clicks `compare versions`' and 'selects two versions' to generate a diff."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+          "canonical_name": "add warning for missing extraction data",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description: \"all uploaded documents must be versioned...uploading a file with an existing name will create a new version...\"",
+            "Entity B's description: \"...comparison cannot be run because the extraction data for an old version is missing.\""
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "read_only_comparison_view_5fa93f65",
+          "canonical_name": "read-only comparison view",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description states 'uploading a file with an existing name will create a new version'.",
+            "Entity B's description refers to a 'compare versions screen'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "default_comparison_versions_891d15c3",
+          "canonical_name": "default comparison versions",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A's description: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version and will not overwrite the old one.'",
+            "Entity B's description: 'the default comparison view should be the latest version versus the immediately preceding version.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "error_handling_for_same_version_comparis_185be21c",
+          "canonical_name": "error handling for same version comparison",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description establishes that 'all uploaded documents must be versioned'.",
+            "Entity B's description defines a specific behavior for '...compare the same version against itself...'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "user_document_upload_workflow_91df1553",
+          "canonical_name": "user document upload workflow",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity B, 'user document upload workflow', describes the process of uploading documents.",
+            "Entity A, 'document versioning strategy', defines a core rule for how uploaded documents must be handled: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version and will not overwrite the old one.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "challenge_to_never_overwrite_rule_968eb641",
+          "canonical_name": "challenge to 'never overwrite' rule",
+          "via_relationship": "blocks",
+          "confidence": 1,
+          "evidence": [
+            "Entity A establishes a decision: \"uploading a file with an existing name will create a new version and will not overwrite the old one.\"",
+            "Entity B is a risk named \"challenge to 'never overwrite' rule\".",
+            "Entity B's description states: \"the decision to never overwrite files is being challenged... this rule may need to be revisited.\""
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+          "canonical_name": "user confusion with non-adjacent version comparison",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A is a decision to implement document versioning.",
+            "Entity B is a risk concerning how users might interact with those versions, specifically when comparing non-adjacent ones (e.g., v1 vs. v5)."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "decide_on_strict_diff_mode_32d5e74c",
+          "canonical_name": "decide on 'strict diff' mode",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A defines the core 'document versioning strategy', stating that new versions are created instead of overwriting files.",
+            "Entity B is an action item to 'decide on 'strict diff' mode', which is a feature for comparing different versions of a document.",
+            "The concept of a 'diff mode' (Entity B) is functionally dependent on the existence of multiple document versions, which is the system established by Entity A."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "finalize_upload_status_definitions_09174b61",
+          "canonical_name": "finalize upload status definitions",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A's description: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version...'",
+            "Entity B's description: 'the official set of upload status values needs to be finalized with the backend team.'",
+            "Both entities originate from the same source document: 'doc01_engineering_platform.md'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "plan_for_future_ingestion_sources_3b83e936",
+          "canonical_name": "plan for future ingestion sources",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description states a rule for all uploaded documents: 'all uploaded documents must be versioned from day one.'",
+            "Entity B's description outlines a plan to 'ingest documents directly from sources like notion and google drive.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "decide_on_report_download_feature_12fbbf7f",
+          "canonical_name": "decide on report download feature",
+          "via_relationship": "depends_on",
+          "confidence": 0.6,
+          "evidence": [
+            "Entity A describes a 'document versioning strategy' for all documents.",
+            "Entity B is an action item to 'decide on report download feature'.",
+            "A downloadable report is a type of document that would be generated and managed by the system."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+          "canonical_name": "evaluate including 'link changes' in diff",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version and will not overwrite the old one.'",
+            "Entity B: 'a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "service_dependencies_17d5df36",
+          "canonical_name": "service dependencies",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A description: \"the upload page depends on the upload service api, the extraction job queue, and the document metadata store.\"",
+            "Entity B description: \"document extraction is an asynchronous process that begins immediately after a successful upload. the status of the job must persist, allowing the user to navigate away from the page and return later.\""
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+          "canonical_name": "incomplete comparison due to failed extractions",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A describes the 'asynchronous extraction process'.",
+            "Entity B describes a risk that occurs 'if an extraction process failed'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "network_interruption_during_upload_14d39789",
+          "canonical_name": "network interruption during upload",
+          "via_relationship": "blocks",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A description: 'a network drop during upload is a known failure mode.'",
+            "Entity B description: 'document extraction is an asynchronous process that begins immediately after a successful upload.'"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "define_batch_upload_limits_b15ea7a9",
+          "canonical_name": "define batch upload limits",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "The description for Entity B, 'define batch upload limits', states that the decision depends on the 'async queue's health'.",
+            "Entity A is the 'asynchronous extraction process', which is the system that would be managed by this 'async queue'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea",
+          "canonical_name": "resolve auto-run vs. manual-run conflict",
+          "via_relationship": "blocks",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A describes a manual process: '1. user clicks `compare versions`... 3. user selects two versions. 4. user clicks `generate knowledge diff`.'",
+            "Entity B describes an unresolved decision about this process: 'a decision needs to be made between product's request for auto-running comparisons for speed and infrastructure's concern for cost control via manual runs.'"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "model_timeout_during_analysis_2ecad586",
+          "canonical_name": "model timeout during analysis",
+          "via_relationship": "blocks",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity B's description states: 'the analysis model may time out during the diff generation process, which will interrupt the user workflow.'",
+            "Entity A's description details the 'generate knowledge diff workflow', which includes a step where 'the system analyzes changes'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "handling_for_single_version_documents_90cafc8f",
+          "canonical_name": "handling for single version documents",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A's description: \"if only one version of a document exists, the compare feature should be disabled, accompanied by a tooltip explaining why.\"",
+            "Entity B's description: \"an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.\"",
+            "Both entities are from the same source document: \"doc02_product_privacy_policy.md\"."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+          "canonical_name": "cost of auto-run compare feature",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's canonical name is 'read-only comparison view' and its description specifies that the 'compare versions screen must be read-only'.",
+            "Entity B's canonical name is 'cost of auto-run compare feature' and its description discusses 'the comparison' and its operational costs."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+          "canonical_name": "upload input validation and error handling",
+          "via_relationship": "references",
+          "confidence": 0.72,
+          "evidence": [
+            "upload input validation and error handling references error handling for same version comparison"
+          ],
+          "hop": 2
+        }
+      ]
+    },
+    {
+      "changed_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "changed_entity_name": "generate knowledge diff workflow",
+      "impacted_entities": [
+        {
+          "entity_id": "user_document_upload_workflow_91df1553",
+          "canonical_name": "user document upload workflow",
+          "via_relationship": "references",
+          "confidence": 0.72,
+          "evidence": [
+            "user document upload workflow references generate knowledge diff workflow"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "network_interruption_during_upload_14d39789",
+          "canonical_name": "network interruption during upload",
+          "via_relationship": "blocks",
+          "confidence": 0.75,
+          "evidence": [
+            "Entity A is a risk describing a 'network drop' as a 'known failure mode'.",
+            "Entity B is a process where 'the system analyzes changes' between two versions of a document.",
+            "It is a reasonable inference that for the system to analyze changes, it must first fetch the two document versions, a step that requires network connectivity."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+          "canonical_name": "evaluate including 'link changes' in diff",
+          "via_relationship": "references",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A describes a 'generate knowledge diff workflow' where 'the system analyzes changes and displays added, removed, and modified knowledge sections.'",
+            "Entity B is an action item to 'evaluate including 'link changes' in diff', questioning if 'the comparison logic should include changes to links, not just knowledge items.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+          "canonical_name": "incomplete comparison due to failed extractions",
+          "via_relationship": "blocks",
+          "confidence": 0.95,
+          "evidence": [
+            "Description of entity A: '...the system analyzes changes and displays added, removed, and modified knowledge sections.'",
+            "Description of entity B: 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+          "canonical_name": "user confusion with non-adjacent version comparison",
+          "via_relationship": "blocks",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A describes a workflow where a 'user selects two versions' to compare.",
+            "Entity B describes a risk that 'allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "decide_on_report_download_feature_12fbbf7f",
+          "canonical_name": "decide on report download feature",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A is a workflow that generates a 'knowledge diff' and displays 'added, removed, and modified knowledge sections'.",
+            "Entity B is an action item to decide on a 'report download feature' for the 'comparison results'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+          "canonical_name": "add warning for missing extraction data",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "The description of entity A is 'the system analyzes changes and displays added, removed, and modified knowledge sections', which is a comparison workflow.",
+            "The description of entity B is 'an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea",
+          "canonical_name": "resolve auto-run vs. manual-run conflict",
+          "via_relationship": "blocks",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A describes a manual process: '1. user clicks `compare versions`... 3. user selects two versions. 4. user clicks `generate knowledge diff`.'",
+            "Entity B describes an unresolved decision about this process: 'a decision needs to be made between product's request for auto-running comparisons for speed and infrastructure's concern for cost control via manual runs.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "model_timeout_during_analysis_2ecad586",
+          "canonical_name": "model timeout during analysis",
+          "via_relationship": "blocks",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity B's description states: 'the analysis model may time out during the diff generation process, which will interrupt the user workflow.'",
+            "Entity A's description details the 'generate knowledge diff workflow', which includes a step where 'the system analyzes changes'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "challenge_to_never_overwrite_rule_968eb641",
+          "canonical_name": "challenge to 'never overwrite' rule",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A describes a 'user document upload workflow' which involves ingesting and processing user-selected files.",
+            "Entity B describes a 'challenge to 'never overwrite' rule', specifically for use cases like 'replacing a file to fix a typo'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+          "canonical_name": "upload input validation and error handling",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "The decision (A) is about 'error handling' for uploads.",
+            "The risk (B) is a specific 'known failure mode' that can occur during an upload.",
+            "A comprehensive error handling strategy must account for known failure modes."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "finalize_upload_status_definitions_09174b61",
+          "canonical_name": "finalize upload status definitions",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description: \"a network drop during upload is a known failure mode.\"",
+            "Entity B's description: \"the official set of upload status values needs to be finalized... the current set is `processing|extracted|failed`\""
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "document_versioning_strategy_8da8d18d",
+          "canonical_name": "document versioning strategy",
+          "via_relationship": "depends_on",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A describes a 'document versioning strategy' for all uploaded documents.",
+            "Entity B describes a risk of 'network interruption during upload'.",
+            "Both entities are concerned with the same core process: document upload."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "define_batch_upload_limits_b15ea7a9",
+          "canonical_name": "define batch upload limits",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A is a risk named 'network interruption during upload'.",
+            "Entity B is an action item named 'define batch upload limits'.",
+            "Both entities are concerned with the 'upload' process and are found in the same source document."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "read_only_comparison_view_5fa93f65",
+          "canonical_name": "read-only comparison view",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A describes the 'compare versions screen' and its read-only nature.",
+            "Entity B describes a determination to be made about the 'comparison logic' for that screen, specifically regarding what content to diff.",
+            "The implementation of the comparison view (A) requires the comparison logic to be defined, which is the subject of the action item (B)."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "handling_for_single_version_documents_90cafc8f",
+          "canonical_name": "handling for single version documents",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description mentions 'the compare feature should be disabled'.",
+            "Entity B's description discusses 'incomplete comparison' and the system's inability to 'perform a diff'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "default_comparison_versions_891d15c3",
+          "canonical_name": "default comparison versions",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A's description: \"the default comparison view should be the latest version versus the immediately preceding version.\"",
+            "Entity B's description: \"the design team has raised a concern that allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.\""
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+          "canonical_name": "cost of auto-run compare feature",
+          "via_relationship": "references",
+          "confidence": 0.72,
+          "evidence": [
+            "cost of auto-run compare feature references user confusion with non-adjacent version comparison"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "decide_on_strict_diff_mode_32d5e74c",
+          "canonical_name": "decide on 'strict diff' mode",
+          "via_relationship": "references",
+          "confidence": 0.72,
+          "evidence": [
+            "decide on 'strict diff' mode references decide on report download feature"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "error_handling_for_same_version_comparis_185be21c",
+          "canonical_name": "error handling for same version comparison",
+          "via_relationship": "references",
+          "confidence": 0.4,
+          "evidence": [
+            "Entity A's description: \"if a user attempts to compare the same version against itself, the system should show a warning and stop the process.\"",
+            "Entity B's description: \"an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.\""
+          ],
+          "hop": 2
+        }
+      ]
+    },
+    {
+      "changed_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "changed_entity_name": "asynchronous extraction process",
+      "impacted_entities": [
+        {
+          "entity_id": "service_dependencies_17d5df36",
+          "canonical_name": "service dependencies",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A description: \"the upload page depends on the upload service api, the extraction job queue, and the document metadata store.\"",
+            "Entity B description: \"document extraction is an asynchronous process that begins immediately after a successful upload. the status of the job must persist, allowing the user to navigate away from the page and return later.\""
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+          "canonical_name": "incomplete comparison due to failed extractions",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A describes the 'asynchronous extraction process'.",
+            "Entity B describes a risk that occurs 'if an extraction process failed'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "network_interruption_during_upload_14d39789",
+          "canonical_name": "network interruption during upload",
+          "via_relationship": "blocks",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A description: 'a network drop during upload is a known failure mode.'",
+            "Entity B description: 'document extraction is an asynchronous process that begins immediately after a successful upload.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+          "canonical_name": "add warning for missing extraction data",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A describes the 'asynchronous extraction process'.",
+            "Entity B is an action item to 'add warning for missing extraction data'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "user_document_upload_workflow_91df1553",
+          "canonical_name": "user document upload workflow",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A description: '4. clicks 'start ingest' to begin processing. 5. a row appears in the table with a 'processing' status. 6. when complete, the status changes to 'extracted'.'",
+            "Entity B description: 'document extraction is an asynchronous process that begins immediately after a successful upload.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "generate_knowledge_diff_workflow_1290edf0",
+          "canonical_name": "generate knowledge diff workflow",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description: 'document extraction is an asynchronous process that begins immediately after a successful upload.'",
+            "Entity B's description: 'the system analyzes changes and displays added, removed, and modified knowledge sections.'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "define_batch_upload_limits_b15ea7a9",
+          "canonical_name": "define batch upload limits",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "The description for Entity B, 'define batch upload limits', states that the decision depends on the 'async queue's health'.",
+            "Entity A is the 'asynchronous extraction process', which is the system that would be managed by this 'async queue'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "plan_for_future_ingestion_sources_3b83e936",
+          "canonical_name": "plan for future ingestion sources",
+          "via_relationship": "references",
+          "confidence": 0.8,
+          "evidence": [
+            "Entity A description: document extraction is an asynchronous process that begins immediately after a successful upload.",
+            "Entity B description: future work includes building integrations to ingest documents directly from sources like notion and google drive."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "resolve_open_questions_on_upload_behavio_ce973260",
+          "canonical_name": "resolve open questions on upload behavior and features",
+          "via_relationship": "blocks",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A describes the technical components of an upload system: 'the upload page depends on the upload service api, the extraction job queue, and the document metadata store.'",
+            "Entity B is an action item to make decisions about the features and behavior of the same upload system: 'decisions are needed on several topics: whether failed uploads should auto-retry, support for zip archives...'"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+          "canonical_name": "evaluate including 'link changes' in diff",
+          "via_relationship": "references",
+          "confidence": 0.6,
+          "evidence": [
+            "Entity A's description: 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.'",
+            "Entity B's description: 'a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.'"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "handling_for_single_version_documents_90cafc8f",
+          "canonical_name": "handling for single version documents",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description mentions 'the compare feature should be disabled'.",
+            "Entity B's description discusses 'incomplete comparison' and the system's inability to 'perform a diff'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+          "canonical_name": "upload input validation and error handling",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "The decision (A) is about 'error handling' for uploads.",
+            "The risk (B) is a specific 'known failure mode' that can occur during an upload.",
+            "A comprehensive error handling strategy must account for known failure modes."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "finalize_upload_status_definitions_09174b61",
+          "canonical_name": "finalize upload status definitions",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description: \"a network drop during upload is a known failure mode.\"",
+            "Entity B's description: \"the official set of upload status values needs to be finalized... the current set is `processing|extracted|failed`\""
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "document_versioning_strategy_8da8d18d",
+          "canonical_name": "document versioning strategy",
+          "via_relationship": "depends_on",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A describes a 'document versioning strategy' for all uploaded documents.",
+            "Entity B describes a risk of 'network interruption during upload'.",
+            "Both entities are concerned with the same core process: document upload."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "error_handling_for_same_version_comparis_185be21c",
+          "canonical_name": "error handling for same version comparison",
+          "via_relationship": "references",
+          "confidence": 0.4,
+          "evidence": [
+            "Entity A's description: \"if a user attempts to compare the same version against itself, the system should show a warning and stop the process.\"",
+            "Entity B's description: \"an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.\""
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+          "canonical_name": "user confusion with non-adjacent version comparison",
+          "via_relationship": "references",
+          "confidence": 0.5,
+          "evidence": [
+            "Entity A's description: 'the design team has raised a concern that allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.'",
+            "Entity B's description: 'an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.'"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "model_timeout_during_analysis_2ecad586",
+          "canonical_name": "model timeout during analysis",
+          "via_relationship": "blocks",
+          "confidence": 0.8,
+          "evidence": [
+            "Entity B's description states: '...which will interrupt the user workflow.'",
+            "Entity A is a 'user document upload workflow', a type of user workflow.",
+            "The 'analysis' mentioned in Entity B is a plausible event during the 'processing' step of Entity A's workflow."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "challenge_to_never_overwrite_rule_968eb641",
+          "canonical_name": "challenge to 'never overwrite' rule",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A describes a 'user document upload workflow' which involves ingesting and processing user-selected files.",
+            "Entity B describes a 'challenge to 'never overwrite' rule', specifically for use cases like 'replacing a file to fix a typo'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "decide_on_report_download_feature_12fbbf7f",
+          "canonical_name": "decide on report download feature",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A is a workflow that generates a 'knowledge diff' and displays 'added, removed, and modified knowledge sections'.",
+            "Entity B is an action item to decide on a 'report download feature' for the 'comparison results'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea",
+          "canonical_name": "resolve auto-run vs. manual-run conflict",
+          "via_relationship": "blocks",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A describes a manual process: '1. user clicks `compare versions`... 3. user selects two versions. 4. user clicks `generate knowledge diff`.'",
+            "Entity B describes an unresolved decision about this process: 'a decision needs to be made between product's request for auto-running comparisons for speed and infrastructure's concern for cost control via manual runs.'"
+          ],
+          "hop": 2
+        }
+      ]
+    },
+    {
+      "changed_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "changed_entity_name": "evaluate including 'link changes' in diff",
+      "impacted_entities": [
+        {
+          "entity_id": "define_batch_upload_limits_b15ea7a9",
+          "canonical_name": "define batch upload limits",
+          "via_relationship": "references",
+          "confidence": 0.72,
+          "evidence": [
+            "define batch upload limits references evaluate including 'link changes' in diff"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea",
+          "canonical_name": "resolve auto-run vs. manual-run conflict",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A is an action item to resolve a conflict between auto-running comparisons for speed versus manual runs for cost control.",
+            "Entity B is an action item to determine if the comparison logic should be expanded to include 'link changes'.",
+            "Both entities are of type 'action_item' and originate from the same source document 'doc02_product_privacy_policy.md'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "read_only_comparison_view_5fa93f65",
+          "canonical_name": "read-only comparison view",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A describes the 'compare versions screen' and its read-only nature.",
+            "Entity B describes a determination to be made about the 'comparison logic' for that screen, specifically regarding what content to diff.",
+            "The implementation of the comparison view (A) requires the comparison logic to be defined, which is the subject of the action item (B)."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "user_document_upload_workflow_91df1553",
+          "canonical_name": "user document upload workflow",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A describes a 'user document upload workflow' where a user selects multiple files and clicks 'start ingest' to begin processing.",
+            "Entity B is an action item to 'define batch upload limits', stating that 'the maximum number of files allowed in a single batch upload needs to be determined.'"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "default_comparison_versions_891d15c3",
+          "canonical_name": "default comparison versions",
+          "via_relationship": "references",
+          "confidence": 0.72,
+          "evidence": [
+            "default comparison versions references read-only comparison view"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+          "canonical_name": "cost of auto-run compare feature",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's canonical name is 'read-only comparison view' and its description specifies that the 'compare versions screen must be read-only'.",
+            "Entity B's canonical name is 'cost of auto-run compare feature' and its description discusses 'the comparison' and its operational costs."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+          "canonical_name": "add warning for missing extraction data",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A is a decision about the 'compare versions screen' being read-only.",
+            "Entity B is an action item to add a warning for cases where a 'comparison cannot be run'.",
+            "Both entities describe functional requirements for the same 'comparison' feature."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+          "canonical_name": "incomplete comparison due to failed extractions",
+          "via_relationship": "blocks",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A is a decision that the 'compare versions screen must be read-only'.",
+            "Entity B is a risk that 'the system cannot perform a diff' if an extraction has failed.",
+            "Both entities refer to the same 'comparison' functionality."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "decide_on_strict_diff_mode_32d5e74c",
+          "canonical_name": "decide on 'strict diff' mode",
+          "via_relationship": "blocks",
+          "confidence": 0.8,
+          "evidence": [
+            "Entity A is a decision that 'the compare versions screen must be read-only'.",
+            "Entity B is an action item to 'decide on 'strict diff' mode' because a request from legal 'conflicts with the current decision to hide them' and 'this requirement needs to be resolved'."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "decide_on_report_download_feature_12fbbf7f",
+          "canonical_name": "decide on report download feature",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description: \"the compare versions screen must be read-only; users cannot edit content from this interface.\"",
+            "Entity B's description: \"an open question exists on whether to allow users to download a markdown report of the comparison results.\""
+          ],
+          "hop": 2
+        }
+      ]
+    },
+    {
+      "changed_entity_id": "user_document_upload_workflow_91df1553",
+      "changed_entity_name": "user document upload workflow",
+      "impacted_entities": [
+        {
+          "entity_id": "network_interruption_during_upload_14d39789",
+          "canonical_name": "network interruption during upload",
+          "via_relationship": "blocks",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A describes the 'user document upload workflow'.",
+            "Entity B is a risk named 'network interruption during upload' and is described as a 'known failure mode'.",
+            "A network interruption is a condition that would prevent the upload workflow from completing successfully."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "model_timeout_during_analysis_2ecad586",
+          "canonical_name": "model timeout during analysis",
+          "via_relationship": "blocks",
+          "confidence": 0.8,
+          "evidence": [
+            "Entity B's description states: '...which will interrupt the user workflow.'",
+            "Entity A is a 'user document upload workflow', a type of user workflow.",
+            "The 'analysis' mentioned in Entity B is a plausible event during the 'processing' step of Entity A's workflow."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "challenge_to_never_overwrite_rule_968eb641",
+          "canonical_name": "challenge to 'never overwrite' rule",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A describes a 'user document upload workflow' which involves ingesting and processing user-selected files.",
+            "Entity B describes a 'challenge to 'never overwrite' rule', specifically for use cases like 'replacing a file to fix a typo'."
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+          "canonical_name": "incomplete comparison due to failed extractions",
+          "via_relationship": "depends_on",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description outlines a process where a document's status becomes 'extracted' after processing: '...when complete, the status changes to 'extracted'. 7. user can then view the extraction.'",
+            "Entity B's description defines a risk related to a failed extraction process: 'if an extraction process failed for an older version, the system cannot perform a diff...'"
+          ],
+          "hop": 1
+        },
+        {
+          "entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+          "canonical_name": "upload input validation and error handling",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "The decision (A) is about 'error handling' for uploads.",
+            "The risk (B) is a specific 'known failure mode' that can occur during an upload.",
+            "A comprehensive error handling strategy must account for known failure modes."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "finalize_upload_status_definitions_09174b61",
+          "canonical_name": "finalize upload status definitions",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description: \"a network drop during upload is a known failure mode.\"",
+            "Entity B's description: \"the official set of upload status values needs to be finalized... the current set is `processing|extracted|failed`\""
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "document_versioning_strategy_8da8d18d",
+          "canonical_name": "document versioning strategy",
+          "via_relationship": "depends_on",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A describes a 'document versioning strategy' for all uploaded documents.",
+            "Entity B describes a risk of 'network interruption during upload'.",
+            "Both entities are concerned with the same core process: document upload."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "define_batch_upload_limits_b15ea7a9",
+          "canonical_name": "define batch upload limits",
+          "via_relationship": "references",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A is a risk named 'network interruption during upload'.",
+            "Entity B is an action item named 'define batch upload limits'.",
+            "Both entities are concerned with the 'upload' process and are found in the same source document."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+          "canonical_name": "user confusion with non-adjacent version comparison",
+          "via_relationship": "depends_on",
+          "confidence": 0.85,
+          "evidence": [
+            "Entity A describes a 'never overwrite' rule which implies the creation of a new version for every change, no matter how small (e.g., fixing a typo).",
+            "Entity B describes the risk of 'user confusion with non-adjacent version comparison (e.g., v1 vs. v5)'.",
+            "A strict 'never overwrite' policy (Entity A) is a direct cause for the proliferation of versions, which in turn creates the conditions for the user confusion risk described in Entity B."
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+          "canonical_name": "add warning for missing extraction data",
+          "via_relationship": "depends_on",
+          "confidence": 0.95,
+          "evidence": [
+            "Entity A (risk) description: 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.'",
+            "Entity B (action_item) description: 'an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.'"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+          "canonical_name": "evaluate including 'link changes' in diff",
+          "via_relationship": "references",
+          "confidence": 0.6,
+          "evidence": [
+            "Entity A's description: 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.'",
+            "Entity B's description: 'a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.'"
+          ],
+          "hop": 2
+        },
+        {
+          "entity_id": "handling_for_single_version_documents_90cafc8f",
+          "canonical_name": "handling for single version documents",
+          "via_relationship": "references",
+          "confidence": 0.9,
+          "evidence": [
+            "Entity A's description mentions 'the compare feature should be disabled'.",
+            "Entity B's description discusses 'incomplete comparison' and the system's inability to 'perform a diff'."
+          ],
+          "hop": 2
+        }
+      ]
+    }
+  ]
+}

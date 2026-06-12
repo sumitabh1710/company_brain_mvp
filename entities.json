@@ -1,0 +1,491 @@
+{
+  "generated_at": "2026-06-05T17:56:49.722Z",
+  "model_version": "gemini-2.5-pro",
+  "metrics": {
+    "total_items": 30,
+    "total_entities": 30,
+    "compression_ratio": 1
+  },
+  "entities": [
+    {
+      "entity_id": "upload_page_ownership_74a86301",
+      "canonical_name": "upload page ownership",
+      "type": "ownership",
+      "aliases": [
+        "upload page ownership"
+      ],
+      "supporting_item_ids": [
+        "970a240cee83cdff96f33cb17ae47227d1ff4ecf"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "the owners are the product, platform, and design teams. this is not yet locked.",
+      "last_seen_at": "2026-06-05T17:56:41.030Z"
+    },
+    {
+      "entity_id": "document_versioning_strategy_8da8d18d",
+      "canonical_name": "document versioning strategy",
+      "type": "decision",
+      "aliases": [
+        "document versioning strategy"
+      ],
+      "supporting_item_ids": [
+        "86dd9e8b2734b57a2fa42d66f18293ae9b91ef76"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version and will not overwrite the old one.",
+      "last_seen_at": "2026-06-05T17:56:41.030Z"
+    },
+    {
+      "entity_id": "user_document_upload_workflow_91df1553",
+      "canonical_name": "user document upload workflow",
+      "type": "process",
+      "aliases": [
+        "user document upload workflow"
+      ],
+      "supporting_item_ids": [
+        "e07a7214910e3cceb7046a5bab915c63fdaf9712"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "1. user lands on the upload page. 2. clicks 'upload docs' cta, which opens a file picker. 3. user selects files (.md,.pdf,.txt). 4. clicks 'start ingest' to begin processing. 5. a row appears in the table with a 'processing' status. 6. when complete, the status changes to 'extracted'. 7. user can then view the extraction.",
+      "last_seen_at": "2026-06-05T17:56:41.030Z"
+    },
+    {
+      "entity_id": "supported_file_formats_11a47af5",
+      "canonical_name": "supported file formats",
+      "type": "decision",
+      "aliases": [
+        "supported file formats"
+      ],
+      "supporting_item_ids": [
+        "278bc703e4fb066e6400ff14e11284eabae7d0ac"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "for the initial release, only.md,.pdf, and.txt file formats will be supported for upload.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "canonical_name": "upload input validation and error handling",
+      "type": "decision",
+      "aliases": [
+        "upload input validation and error handling"
+      ],
+      "supporting_item_ids": [
+        "e21d7582f16279e36654600bc13c4e1609d6331e"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "uploads must be rejected if the file is empty or has an unsupported extension. to prevent duplicate submissions, the 'start ingest' button should be disabled while a request is in-flight.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "network_interruption_during_upload_14d39789",
+      "canonical_name": "network interruption during upload",
+      "type": "risk",
+      "aliases": [
+        "network interruption during upload"
+      ],
+      "supporting_item_ids": [
+        "cac1056ec2af7cfbe14ff8137f22e649f4bc76a3"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "a network drop during upload is a known failure mode. the system should provide the user with an option to retry.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "persisted_document_metadata_4a2c2ef9",
+      "canonical_name": "persisted document metadata",
+      "type": "definition",
+      "aliases": [
+        "persisted document metadata"
+      ],
+      "supporting_item_ids": [
+        "76229fc5c8ed59abd50ad5a15ac77d2bb907cfb0"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "the core data points to persist for each uploaded document are: document_id, document_version, original_file_name, source_type (initially 'manual_upload'), and upload_status.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "service_dependencies_17d5df36",
+      "canonical_name": "service dependencies",
+      "type": "dependency",
+      "aliases": [
+        "service dependencies"
+      ],
+      "supporting_item_ids": [
+        "0684b2d5645e6537e0700314d6cd3c47cfe664ba"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "the upload page depends on the upload service api, the extraction job queue, and the document metadata store.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "asynchronous_extraction_process_b63bca6f",
+      "canonical_name": "asynchronous extraction process",
+      "type": "architecture",
+      "aliases": [
+        "asynchronous extraction process"
+      ],
+      "supporting_item_ids": [
+        "6fd9f2eb0b68de82647ae889109d00f13fdaa92e"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "document extraction is an asynchronous process that begins immediately after a successful upload. the status of the job must persist, allowing the user to navigate away from the page and return later.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "define_batch_upload_limits_b15ea7a9",
+      "canonical_name": "define batch upload limits",
+      "type": "action_item",
+      "aliases": [
+        "define batch upload limits"
+      ],
+      "supporting_item_ids": [
+        "bad583465c327e1cf944e33ba12d9a40beba5699"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "the maximum number of files allowed in a single batch upload needs to be determined. suggestions range from 20 to 50, depending on the async queue's health.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "resolve_open_questions_on_upload_behavio_ce973260",
+      "canonical_name": "resolve open questions on upload behavior and features",
+      "type": "action_item",
+      "aliases": [
+        "resolve open questions on upload behavior and features"
+      ],
+      "supporting_item_ids": [
+        "fceb0f1e0014b64d9766a1b3961aaa320121204d"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "decisions are needed on several topics: whether failed uploads should auto-retry, support for zip archives, timing for document-level tagging, and whether drag-and-drop initiates an instant upload or requires confirmation.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "plan_for_future_ingestion_sources_3b83e936",
+      "canonical_name": "plan for future ingestion sources",
+      "type": "action_item",
+      "aliases": [
+        "plan for future ingestion sources"
+      ],
+      "supporting_item_ids": [
+        "9dfb8d9a1bbf7bc20dcb12b14a36924afa65a800"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "future work includes building integrations to ingest documents directly from sources like notion and google drive.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "challenge_to_never_overwrite_rule_968eb641",
+      "canonical_name": "challenge to 'never overwrite' rule",
+      "type": "risk",
+      "aliases": [
+        "challenge to 'never overwrite' rule"
+      ],
+      "supporting_item_ids": [
+        "ecd3c563970c2b39d2f49476bc9e36d704612224"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "the decision to never overwrite files is being challenged for specific use cases like replacing a file to fix a typo. this rule may need to be revisited.",
+      "last_seen_at": "2026-06-05T17:56:41.031Z"
+    },
+    {
+      "entity_id": "finalize_upload_status_definitions_09174b61",
+      "canonical_name": "finalize upload status definitions",
+      "type": "action_item",
+      "aliases": [
+        "finalize upload status definitions"
+      ],
+      "supporting_item_ids": [
+        "825108d8d1440d84e1251c843255e1b93d4b895a"
+      ],
+      "source_documents": [
+        "doc01_engineering_platform.md"
+      ],
+      "description": "the official set of upload status values needs to be finalized with the backend team. the current set is `processing|extracted|failed`, with `queued` as a potential addition.",
+      "last_seen_at": "2026-06-05T17:56:41.032Z"
+    },
+    {
+      "entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "canonical_name": "generate knowledge diff workflow",
+      "type": "process",
+      "aliases": [
+        "generate knowledge diff workflow"
+      ],
+      "supporting_item_ids": [
+        "bdf144e2666fe2ee14101e858e424bd2a2e87dec"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "1. user clicks `compare versions` on a document page. 2. a modal opens with dropdowns for old and new versions. 3. user selects two versions. 4. user clicks `generate knowledge diff`. 5. the system analyzes changes and displays added, removed, and modified knowledge sections. 6. user can expand modified cards to see old vs. new content.",
+      "last_seen_at": "2026-06-05T17:56:41.032Z"
+    },
+    {
+      "entity_id": "default_comparison_versions_891d15c3",
+      "canonical_name": "default comparison versions",
+      "type": "decision",
+      "aliases": [
+        "default comparison versions"
+      ],
+      "supporting_item_ids": [
+        "8bddc58515fd0975cdf1736f2e2c8a6e370bbfb8"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "the default comparison view should be the latest version versus the immediately preceding version.",
+      "last_seen_at": "2026-06-05T17:56:41.032Z"
+    },
+    {
+      "entity_id": "handling_of_wording_only_changes_47a59c9f",
+      "canonical_name": "handling of wording-only changes",
+      "type": "decision",
+      "aliases": [
+        "handling of wording-only changes"
+      ],
+      "supporting_item_ids": [
+        "0c2d9924c8be84f29533283120ec6dc954c1a184"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "changes that are only wording adjustments should not be shown as modified knowledge. only semantic changes (e.g., changes to threshold values) must be shown.",
+      "last_seen_at": "2026-06-05T17:56:41.033Z"
+    },
+    {
+      "entity_id": "read_only_comparison_view_5fa93f65",
+      "canonical_name": "read-only comparison view",
+      "type": "decision",
+      "aliases": [
+        "read-only comparison view"
+      ],
+      "supporting_item_ids": [
+        "21c3a3d9d6fec2d3562014e5f737601cebd3fe30"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "the compare versions screen must be read-only; users cannot edit content from this interface.",
+      "last_seen_at": "2026-06-05T17:56:41.033Z"
+    },
+    {
+      "entity_id": "handling_for_single_version_documents_90cafc8f",
+      "canonical_name": "handling for single version documents",
+      "type": "decision",
+      "aliases": [
+        "handling for single version documents"
+      ],
+      "supporting_item_ids": [
+        "29287e7ae564c74580d11ba2df15103d7ad89d47"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "if only one version of a document exists, the compare feature should be disabled, accompanied by a tooltip explaining why.",
+      "last_seen_at": "2026-06-05T17:56:41.033Z"
+    },
+    {
+      "entity_id": "display_logic_for_change_reasons_529d27c1",
+      "canonical_name": "display logic for change reasons",
+      "type": "decision",
+      "aliases": [
+        "display logic for change reasons"
+      ],
+      "supporting_item_ids": [
+        "078ce491cbf411b97e0d5a9faee5ea1505ecd1ee"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "modified item cards should include a 'why changed' reason if the analysis model provides one. if the reason is missing, the ui should display 'reason not provided'.",
+      "last_seen_at": "2026-06-05T17:56:41.033Z"
+    },
+    {
+      "entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "canonical_name": "error handling for same version comparison",
+      "type": "decision",
+      "aliases": [
+        "error handling for same version comparison"
+      ],
+      "supporting_item_ids": [
+        "21bd8daffc81035ec3ba9ea770ee0607d96a875b"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "if a user attempts to compare the same version against itself, the system should show a warning and stop the process.",
+      "last_seen_at": "2026-06-05T17:56:49.720Z"
+    },
+    {
+      "entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+      "canonical_name": "cost of auto-run compare feature",
+      "type": "risk",
+      "aliases": [
+        "cost of auto-run compare feature"
+      ],
+      "supporting_item_ids": [
+        "5f65006d7e71673321c1ff847c0a3643925d2523"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "product wants the comparison to auto-run for speed, but the infrastructure team has raised concerns that this approach could lead to high operational costs. a manual run is preferred to control costs.",
+      "last_seen_at": "2026-06-05T17:56:49.720Z"
+    },
+    {
+      "entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "canonical_name": "user confusion with non-adjacent version comparison",
+      "type": "risk",
+      "aliases": [
+        "user confusion with non-adjacent version comparison"
+      ],
+      "supporting_item_ids": [
+        "3288dd259a02ad28a6ea84651fb37ad3772bcbde"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "the design team has raised a concern that allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.",
+      "last_seen_at": "2026-06-05T17:56:49.720Z"
+    },
+    {
+      "entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "canonical_name": "incomplete comparison due to failed extractions",
+      "type": "risk",
+      "aliases": [
+        "incomplete comparison due to failed extractions"
+      ],
+      "supporting_item_ids": [
+        "27a4c409fd85af3fdea7d56ec8f01a6bcaa202d1"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.",
+      "last_seen_at": "2026-06-05T17:56:49.720Z"
+    },
+    {
+      "entity_id": "model_timeout_during_analysis_2ecad586",
+      "canonical_name": "model timeout during analysis",
+      "type": "risk",
+      "aliases": [
+        "model timeout during analysis"
+      ],
+      "supporting_item_ids": [
+        "47c7fa2dd694644d15caca8be8845ed3cbe6577b"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "the analysis model may time out during the diff generation process, which will interrupt the user workflow.",
+      "last_seen_at": "2026-06-05T17:56:49.720Z"
+    },
+    {
+      "entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea",
+      "canonical_name": "resolve auto-run vs. manual-run conflict",
+      "type": "action_item",
+      "aliases": [
+        "resolve auto-run vs. manual-run conflict"
+      ],
+      "supporting_item_ids": [
+        "9d109de94a666fdb2961cc47667748d9af9c87fc"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "a decision needs to be made between product's request for auto-running comparisons for speed and infrastructure's concern for cost control via manual runs.",
+      "last_seen_at": "2026-06-05T17:56:49.721Z"
+    },
+    {
+      "entity_id": "decide_on_strict_diff_mode_32d5e74c",
+      "canonical_name": "decide on 'strict diff' mode",
+      "type": "action_item",
+      "aliases": [
+        "decide on 'strict diff' mode"
+      ],
+      "supporting_item_ids": [
+        "f93dc2f8e4b036629b844e26d4cdfa025f7b8e12"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "legal has requested an optional 'strict diff' mode that would show all wording-only changes, which conflicts with the current decision to hide them. this requirement needs to be resolved.",
+      "last_seen_at": "2026-06-05T17:56:49.721Z"
+    },
+    {
+      "entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "canonical_name": "add warning for missing extraction data",
+      "type": "action_item",
+      "aliases": [
+        "add warning for missing extraction data"
+      ],
+      "supporting_item_ids": [
+        "fc368f3d023c65f0e31c1ba4eee4012fdd90320b"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.",
+      "last_seen_at": "2026-06-05T17:56:49.721Z"
+    },
+    {
+      "entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "canonical_name": "evaluate including 'link changes' in diff",
+      "type": "action_item",
+      "aliases": [
+        "evaluate including 'link changes' in diff"
+      ],
+      "supporting_item_ids": [
+        "08fa4d75e8d3fd3e1f155b04175fc6175fc02ac7"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.",
+      "last_seen_at": "2026-06-05T17:56:49.722Z"
+    },
+    {
+      "entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "canonical_name": "decide on report download feature",
+      "type": "action_item",
+      "aliases": [
+        "decide on report download feature"
+      ],
+      "supporting_item_ids": [
+        "115bb09be42ff712e1e50c6c24a0783be6c38ed1"
+      ],
+      "source_documents": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "description": "an open question exists on whether to allow users to download a markdown report of the comparison results.",
+      "last_seen_at": "2026-06-05T17:56:49.722Z"
+    }
+  ]
+}

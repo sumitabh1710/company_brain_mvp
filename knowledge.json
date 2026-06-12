@@ -1,0 +1,276 @@
+{
+  "source": "test_data/docs",
+  "updated_at": "2026-06-05T17:56:41.022Z",
+  "items": [
+    {
+      "type": "ownership",
+      "title": "upload page ownership",
+      "content": "the owners are the product, platform, and design teams. this is not yet locked.",
+      "confidence": 0.8,
+      "id": "970a240cee83cdff96f33cb17ae47227d1ff4ecf",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "document versioning strategy",
+      "content": "all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version and will not overwrite the old one.",
+      "confidence": 1,
+      "id": "86dd9e8b2734b57a2fa42d66f18293ae9b91ef76",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "process",
+      "title": "user document upload workflow",
+      "content": "1. user lands on the upload page. 2. clicks 'upload docs' cta, which opens a file picker. 3. user selects files (.md,.pdf,.txt). 4. clicks 'start ingest' to begin processing. 5. a row appears in the table with a 'processing' status. 6. when complete, the status changes to 'extracted'. 7. user can then view the extraction.",
+      "confidence": 0.9,
+      "id": "e07a7214910e3cceb7046a5bab915c63fdaf9712",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "supported file formats",
+      "content": "for the initial release, only.md,.pdf, and.txt file formats will be supported for upload.",
+      "confidence": 1,
+      "id": "278bc703e4fb066e6400ff14e11284eabae7d0ac",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "upload input validation and error handling",
+      "content": "uploads must be rejected if the file is empty or has an unsupported extension. to prevent duplicate submissions, the 'start ingest' button should be disabled while a request is in-flight.",
+      "confidence": 1,
+      "id": "e21d7582f16279e36654600bc13c4e1609d6331e",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "risk",
+      "title": "network interruption during upload",
+      "content": "a network drop during upload is a known failure mode. the system should provide the user with an option to retry.",
+      "confidence": 0.9,
+      "id": "cac1056ec2af7cfbe14ff8137f22e649f4bc76a3",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "definition",
+      "title": "persisted document metadata",
+      "content": "the core data points to persist for each uploaded document are: document_id, document_version, original_file_name, source_type (initially 'manual_upload'), and upload_status.",
+      "confidence": 1,
+      "id": "76229fc5c8ed59abd50ad5a15ac77d2bb907cfb0",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "dependency",
+      "title": "service dependencies",
+      "content": "the upload page depends on the upload service api, the extraction job queue, and the document metadata store.",
+      "confidence": 1,
+      "id": "0684b2d5645e6537e0700314d6cd3c47cfe664ba",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "architecture",
+      "title": "asynchronous extraction process",
+      "content": "document extraction is an asynchronous process that begins immediately after a successful upload. the status of the job must persist, allowing the user to navigate away from the page and return later.",
+      "confidence": 1,
+      "id": "6fd9f2eb0b68de82647ae889109d00f13fdaa92e",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "define batch upload limits",
+      "content": "the maximum number of files allowed in a single batch upload needs to be determined. suggestions range from 20 to 50, depending on the async queue's health.",
+      "confidence": 1,
+      "id": "bad583465c327e1cf944e33ba12d9a40beba5699",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "resolve open questions on upload behavior and features",
+      "content": "decisions are needed on several topics: whether failed uploads should auto-retry, support for zip archives, timing for document-level tagging, and whether drag-and-drop initiates an instant upload or requires confirmation.",
+      "confidence": 1,
+      "id": "fceb0f1e0014b64d9766a1b3961aaa320121204d",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "plan for future ingestion sources",
+      "content": "future work includes building integrations to ingest documents directly from sources like notion and google drive.",
+      "confidence": 0.9,
+      "id": "9dfb8d9a1bbf7bc20dcb12b14a36924afa65a800",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "risk",
+      "title": "challenge to 'never overwrite' rule",
+      "content": "the decision to never overwrite files is being challenged for specific use cases like replacing a file to fix a typo. this rule may need to be revisited.",
+      "confidence": 0.8,
+      "id": "ecd3c563970c2b39d2f49476bc9e36d704612224",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "finalize upload status definitions",
+      "content": "the official set of upload status values needs to be finalized with the backend team. the current set is `processing|extracted|failed`, with `queued` as a potential addition.",
+      "confidence": 1,
+      "id": "825108d8d1440d84e1251c843255e1b93d4b895a",
+      "document_id": "doc01_engineering_platform.md",
+      "document_version": 1
+    },
+    {
+      "type": "process",
+      "title": "generate knowledge diff workflow",
+      "content": "1. user clicks `compare versions` on a document page. 2. a modal opens with dropdowns for old and new versions. 3. user selects two versions. 4. user clicks `generate knowledge diff`. 5. the system analyzes changes and displays added, removed, and modified knowledge sections. 6. user can expand modified cards to see old vs. new content.",
+      "confidence": 1,
+      "id": "bdf144e2666fe2ee14101e858e424bd2a2e87dec",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "default comparison versions",
+      "content": "the default comparison view should be the latest version versus the immediately preceding version.",
+      "confidence": 1,
+      "id": "8bddc58515fd0975cdf1736f2e2c8a6e370bbfb8",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "handling of wording-only changes",
+      "content": "changes that are only wording adjustments should not be shown as modified knowledge. only semantic changes (e.g., changes to threshold values) must be shown.",
+      "confidence": 1,
+      "id": "0c2d9924c8be84f29533283120ec6dc954c1a184",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "read-only comparison view",
+      "content": "the compare versions screen must be read-only; users cannot edit content from this interface.",
+      "confidence": 1,
+      "id": "21c3a3d9d6fec2d3562014e5f737601cebd3fe30",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "handling for single version documents",
+      "content": "if only one version of a document exists, the compare feature should be disabled, accompanied by a tooltip explaining why.",
+      "confidence": 0.9,
+      "id": "29287e7ae564c74580d11ba2df15103d7ad89d47",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "display logic for change reasons",
+      "content": "modified item cards should include a 'why changed' reason if the analysis model provides one. if the reason is missing, the ui should display 'reason not provided'.",
+      "confidence": 1,
+      "id": "078ce491cbf411b97e0d5a9faee5ea1505ecd1ee",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "decision",
+      "title": "error handling for same version comparison",
+      "content": "if a user attempts to compare the same version against itself, the system should show a warning and stop the process.",
+      "confidence": 1,
+      "id": "21bd8daffc81035ec3ba9ea770ee0607d96a875b",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "risk",
+      "title": "cost of auto-run compare feature",
+      "content": "product wants the comparison to auto-run for speed, but the infrastructure team has raised concerns that this approach could lead to high operational costs. a manual run is preferred to control costs.",
+      "confidence": 1,
+      "id": "5f65006d7e71673321c1ff847c0a3643925d2523",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "risk",
+      "title": "user confusion with non-adjacent version comparison",
+      "content": "the design team has raised a concern that allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.",
+      "confidence": 0.9,
+      "id": "3288dd259a02ad28a6ea84651fb37ad3772bcbde",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "risk",
+      "title": "incomplete comparison due to failed extractions",
+      "content": "if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.",
+      "confidence": 1,
+      "id": "27a4c409fd85af3fdea7d56ec8f01a6bcaa202d1",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "risk",
+      "title": "model timeout during analysis",
+      "content": "the analysis model may time out during the diff generation process, which will interrupt the user workflow.",
+      "confidence": 0.9,
+      "id": "47c7fa2dd694644d15caca8be8845ed3cbe6577b",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "resolve auto-run vs. manual-run conflict",
+      "content": "a decision needs to be made between product's request for auto-running comparisons for speed and infrastructure's concern for cost control via manual runs.",
+      "confidence": 1,
+      "id": "9d109de94a666fdb2961cc47667748d9af9c87fc",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "decide on 'strict diff' mode",
+      "content": "legal has requested an optional 'strict diff' mode that would show all wording-only changes, which conflicts with the current decision to hide them. this requirement needs to be resolved.",
+      "confidence": 1,
+      "id": "f93dc2f8e4b036629b844e26d4cdfa025f7b8e12",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "add warning for missing extraction data",
+      "content": "an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.",
+      "confidence": 1,
+      "id": "fc368f3d023c65f0e31c1ba4eee4012fdd90320b",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "evaluate including 'link changes' in diff",
+      "content": "a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.",
+      "confidence": 1,
+      "id": "08fa4d75e8d3fd3e1f155b04175fc6175fc02ac7",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    },
+    {
+      "type": "action_item",
+      "title": "decide on report download feature",
+      "content": "an open question exists on whether to allow users to download a markdown report of the comparison results.",
+      "confidence": 1,
+      "id": "115bb09be42ff712e1e50c6c24a0783be6c38ed1",
+      "document_id": "doc02_product_privacy_policy.md",
+      "document_version": 1
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "company_brain_mvp",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/mvp-runner.js",
+  "scripts": {
+    "mvp": "node src/mvp-runner.js",
+    "mvp2": "node src/batch-runner.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/genai": "^2.7.0"
+  }
+}

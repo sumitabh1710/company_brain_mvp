@@ -1,0 +1,1911 @@
+{
+  "generated_at": "2026-06-06T06:29:04.160Z",
+  "model_version": "gemini-2.5-pro",
+  "total_relationships": 134,
+  "relationships": [
+    {
+      "source_entity_id": "user_document_upload_workflow_91df1553",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "user document upload workflow references generate knowledge diff workflow"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "service_dependencies_17d5df36",
+      "target_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A description: \"the upload page depends on the upload service api, the extraction job queue, and the document metadata store.\"",
+        "Entity B description: \"document extraction is an asynchronous process that begins immediately after a successful upload. the status of the job must persist, allowing the user to navigate away from the page and return later.\""
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "default_comparison_versions_891d15c3",
+      "target_entity_id": "read_only_comparison_view_5fa93f65",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "default comparison versions references read-only comparison view"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "default_comparison_versions_891d15c3",
+      "target_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A's description: \"the default comparison view should be the latest version versus the immediately preceding version.\"",
+        "Entity B's description: \"the design team has raised a concern that allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.\""
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "target_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "upload input validation and error handling references error handling for same version comparison"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "target_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "handling for single version documents references error handling for same version comparison"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+      "target_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "cost of auto-run compare feature references user confusion with non-adjacent version comparison"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "target_entity_id": "network_interruption_during_upload_14d39789",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "The decision (A) is about 'error handling' for uploads.",
+        "The risk (B) is a specific 'known failure mode' that can occur during an upload.",
+        "A comprehensive error handling strategy must account for known failure modes."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "target_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A (risk) description: 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.'",
+        "Entity B (action_item) description: 'an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "document_versioning_strategy_8da8d18d",
+      "target_entity_id": "supported_file_formats_11a47af5",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "document versioning strategy references supported file formats"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "target_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description outlines the process for comparing versions: '3. user selects two versions.'",
+        "Entity B's description defines a specific rule for this process: 'if a user attempts to compare the same version against itself, the system should show a warning and stop the process.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "target_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "relationship_type": "references",
+      "confidence": 0.4,
+      "evidence": [
+        "Entity A's description: \"if a user attempts to compare the same version against itself, the system should show a warning and stop the process.\"",
+        "Entity B's description: \"an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.\""
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "evaluate including 'link changes' in diff references decide on report download feature"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "default_comparison_versions_891d15c3",
+      "target_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "default comparison versions references handling for single version documents"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "default_comparison_versions_891d15c3",
+      "target_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "default comparison versions references error handling for same version comparison"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "target_entity_id": "default_comparison_versions_891d15c3",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A is a decision stating that 'the default comparison view should be the latest version versus the immediately preceding version.'",
+        "Entity B is an action item to 'add an explicit warning... for cases where a comparison cannot be run because the extraction data for an old version is missing.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "default_comparison_versions_891d15c3",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A's description: 'the default comparison view should be the latest version versus the immediately preceding version.'",
+        "Entity B's description: 'a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "target_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A describes the 'asynchronous extraction process'.",
+        "Entity B describes a risk that occurs 'if an extraction process failed'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "network_interruption_during_upload_14d39789",
+      "target_entity_id": "user_document_upload_workflow_91df1553",
+      "relationship_type": "blocks",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A describes the 'user document upload workflow'.",
+        "Entity B is a risk named 'network interruption during upload' and is described as a 'known failure mode'.",
+        "A network interruption is a condition that would prevent the upload workflow from completing successfully."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "network_interruption_during_upload_14d39789",
+      "target_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A description: 'a network drop during upload is a known failure mode.'",
+        "Entity B description: 'document extraction is an asynchronous process that begins immediately after a successful upload.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "finalize_upload_status_definitions_09174b61",
+      "target_entity_id": "network_interruption_during_upload_14d39789",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description: \"a network drop during upload is a known failure mode.\"",
+        "Entity B's description: \"the official set of upload status values needs to be finalized... the current set is `processing|extracted|failed`\""
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "network_interruption_during_upload_14d39789",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "blocks",
+      "confidence": 0.75,
+      "evidence": [
+        "Entity A is a risk describing a 'network drop' as a 'known failure mode'.",
+        "Entity B is a process where 'the system analyzes changes' between two versions of a document.",
+        "It is a reasonable inference that for the system to analyze changes, it must first fetch the two document versions, a step that requires network connectivity."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "target_entity_id": "finalize_upload_status_definitions_09174b61",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "define batch upload limits references finalize upload status definitions"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "target_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "relationship_type": "references",
+      "confidence": 0.5,
+      "evidence": [
+        "Entity A's description: 'the design team has raised a concern that allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.'",
+        "Entity B's description: 'an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "target_entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+      "relationship_type": "references",
+      "confidence": 0.6,
+      "evidence": [
+        "Entity A describes a behavior for a feature that performs a 'comparison': 'if a user attempts to compare the same version against itself...'",
+        "Entity B describes a risk associated with the same 'comparison' feature: 'product wants the comparison to auto-run...'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "target_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "define batch upload limits references evaluate including 'link changes' in diff"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "references",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A describes a 'generate knowledge diff workflow' where 'the system analyzes changes and displays added, removed, and modified knowledge sections.'",
+        "Entity B is an action item to 'evaluate including 'link changes' in diff', questioning if 'the comparison logic should include changes to links, not just knowledge items.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea",
+      "target_entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A is a risk describing a conflict between product's desire for an auto-run feature and infrastructure's concern about high operational costs.",
+        "Entity B is an action item specifically created to resolve the conflict described in Entity A ('a decision needs to be made between product's request for auto-running comparisons...and infrastructure's concern for cost control')."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "service_dependencies_17d5df36",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "service dependencies owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_document_upload_workflow_91df1553",
+      "target_entity_id": "service_dependencies_17d5df36",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A describes a workflow that begins when a 'user lands on the upload page.'",
+        "Entity B's description states that 'the upload page depends on the upload service api, the extraction job queue, and the document metadata store.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "service_dependencies_17d5df36",
+      "target_entity_id": "persisted_document_metadata_4a2c2ef9",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity B's description: \"the upload page depends on the upload service api, the extraction job queue, and the document metadata store.\"",
+        "Entity A's description: \"the core data points to persist for each uploaded document are: document_id, document_version, original_file_name, source_type (initially 'manual_upload'), and upload_status.\""
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "target_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "define batch upload limits references decide on report download feature"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "target_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "relationship_type": "references",
+      "confidence": 0.7,
+      "evidence": [
+        "Entity A describes a risk related to 'version comparison'.",
+        "Entity B is an action item about the results of a 'comparison'.",
+        "Both entities are sourced from the same document ('doc02_product_privacy_policy.md')."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "target_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A is a risk describing how 'the system cannot perform a diff' under certain failure conditions, leading to an 'incomplete comparison'.",
+        "Entity B is an action item to decide on a feature that allows users to 'download a markdown report of the comparison results'.",
+        "The risk of having incomplete or unavailable comparison results (Entity A) is a significant impediment to implementing a feature that provides those results to a user (Entity B)."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "decide_on_strict_diff_mode_32d5e74c",
+      "target_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "decide on 'strict diff' mode references decide on report download feature"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "target_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "add warning for missing extraction data references decide on report download feature"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "document_versioning_strategy_8da8d18d",
+      "target_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "document versioning strategy references handling for single version documents"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "target_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "upload input validation and error handling references handling for single version documents"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "blocks",
+      "confidence": 0.95,
+      "evidence": [
+        "Description of entity A: '...the system analyzes changes and displays added, removed, and modified knowledge sections.'",
+        "Description of entity B: 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "target_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "relationship_type": "references",
+      "confidence": 0.8,
+      "evidence": [
+        "Entity A's description specifies behavior for a 'compare feature' when only one version of a document exists.",
+        "Entity B's description raises a user confusion risk for the same concept of comparing document versions, specifically 'non-adjacent versions'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_document_upload_workflow_91df1553",
+      "target_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A describes a 'user document upload workflow' where a user selects multiple files and clicks 'start ingest' to begin processing.",
+        "Entity B is an action item to 'define batch upload limits', stating that 'the maximum number of files allowed in a single batch upload needs to be determined.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "upload input validation and error handling owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "asynchronous extraction process owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "document_versioning_strategy_8da8d18d",
+      "target_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "document versioning strategy references upload input validation and error handling"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity B's description states: 'document extraction is an asynchronous process that begins immediately after a successful upload.'",
+        "Entity A's description states: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version...'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A's description states: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version...'.",
+        "Entity B's description details a process where a user 'clicks `compare versions`' and 'selects two versions' to generate a diff."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_document_upload_workflow_91df1553",
+      "target_entity_id": "finalize_upload_status_definitions_09174b61",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A's description states: \"...a row appears in the table with a 'processing' status. 6. when complete, the status changes to 'extracted'.\"",
+        "Entity B's description states: \"the official set of upload status values needs to be finalized... the current set is `processing|extracted|failed`...\""
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "supported_file_formats_11a47af5",
+      "target_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "supported file formats references upload input validation and error handling"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "supported_file_formats_11a47af5",
+      "target_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "supported file formats references handling for single version documents"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "target_entity_id": "finalize_upload_status_definitions_09174b61",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A is a decision about 'upload input validation and error handling'.",
+        "Entity B is an action item to 'finalize upload status definitions', including states like 'processing', 'extracted', and 'failed'.",
+        "Both entities are part of the same overall 'upload' feature documented in 'doc01_engineering_platform.md'."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "network_interruption_during_upload_14d39789",
+      "target_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "network interruption during upload references user confusion with non-adjacent version comparison"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "network_interruption_during_upload_14d39789",
+      "target_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "network interruption during upload references incomplete comparison due to failed extractions"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "target_entity_id": "finalize_upload_status_definitions_09174b61",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "The description for entity A, 'asynchronous extraction process', states that 'the status of the job must persist'.",
+        "The description for entity B, 'finalize upload status definitions', is an action item to define 'the official set of upload status values... The current set is `processing|extracted|failed`'."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "finalize_upload_status_definitions_09174b61",
+      "target_entity_id": "decide_on_strict_diff_mode_32d5e74c",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "finalize upload status definitions references decide on 'strict diff' mode"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "finalize_upload_status_definitions_09174b61",
+      "target_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "relationship_type": "references",
+      "confidence": 0.72,
+      "evidence": [
+        "finalize upload status definitions references add warning for missing extraction data"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md",
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A describes a workflow where a 'user selects two versions' to compare.",
+        "Entity B describes a risk that 'allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "target_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "relationship_type": "depends_on",
+      "confidence": 1,
+      "evidence": [
+        "Entity B's description states: 'document extraction is an asynchronous process that begins immediately after a successful upload.'",
+        "Entity A's description defines the criteria for a successful upload: 'uploads must be rejected if the file is empty or has an unsupported extension.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description: \"all uploaded documents must be versioned...uploading a file with an existing name will create a new version...\"",
+        "Entity B's description: \"...comparison cannot be run because the extraction data for an old version is missing.\""
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "target_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A describes the 'asynchronous extraction process'.",
+        "Entity B is an action item to 'add warning for missing extraction data'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "target_entity_id": "persisted_document_metadata_4a2c2ef9",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description defines 'persisted document metadata' to include 'document_id' and 'document_version'.",
+        "Entity B's description of the 'generate knowledge diff workflow' states that a user 'selects two versions' of a document to compare."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "read_only_comparison_view_5fa93f65",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description states 'uploading a file with an existing name will create a new version'.",
+        "Entity B's description refers to a 'compare versions screen'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+      "target_entity_id": "read_only_comparison_view_5fa93f65",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's canonical name is 'read-only comparison view' and its description specifies that the 'compare versions screen must be read-only'.",
+        "Entity B's canonical name is 'cost of auto-run compare feature' and its description discusses 'the comparison' and its operational costs."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "target_entity_id": "read_only_comparison_view_5fa93f65",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A is a decision about the 'compare versions screen' being read-only.",
+        "Entity B is an action item to add a warning for cases where a 'comparison cannot be run'.",
+        "Both entities describe functional requirements for the same 'comparison' feature."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "default_comparison_versions_891d15c3",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A's description: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version and will not overwrite the old one.'",
+        "Entity B's description: 'the default comparison view should be the latest version versus the immediately preceding version.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "relationship_type": "references",
+      "confidence": 0.7,
+      "evidence": [
+        "Entity A's description: 'if a user attempts to compare the same version against itself, the system should show a warning and stop the process.'",
+        "Entity B's description: 'a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "handling_of_wording_only_changes_47a59c9f",
+      "target_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "relationship_type": "depends_on",
+      "confidence": 0.8,
+      "evidence": [
+        "Entity A's description: 'changes that are only wording adjustments should not be shown as modified knowledge.'",
+        "Entity B's description: 'if only one version of a document exists, the compare feature should be disabled...'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "handling_of_wording_only_changes_47a59c9f",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description is a decision that 'changes that are only wording adjustments should not be shown as modified knowledge. only semantic changes... must be shown.'",
+        "Entity B's description is an action item to determine 'whether the comparison logic should include changes to links, not just knowledge items.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "target_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A's description: \"if only one version of a document exists, the compare feature should be disabled, accompanied by a tooltip explaining why.\"",
+        "Entity B's description: \"an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.\"",
+        "Both entities are from the same source document: \"doc02_product_privacy_policy.md\"."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "target_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "relationship_type": "blocks",
+      "confidence": 0.8,
+      "evidence": [
+        "Entity B: 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.'",
+        "Entity A: 'allowing users to compare non-adjacent versions (e.g., v1 vs. v5) may be confusing for users.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "relationship_type": "references",
+      "confidence": 0.6,
+      "evidence": [
+        "Entity A's description: 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction.'",
+        "Entity B's description: 'a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "target_entity_id": "challenge_to_never_overwrite_rule_968eb641",
+      "relationship_type": "depends_on",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A describes a 'never overwrite' rule which implies the creation of a new version for every change, no matter how small (e.g., fixing a typo).",
+        "Entity B describes the risk of 'user confusion with non-adjacent version comparison (e.g., v1 vs. v5)'.",
+        "A strict 'never overwrite' policy (Entity A) is a direct cause for the proliferation of versions, which in turn creates the conditions for the user confusion risk described in Entity B."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_document_upload_workflow_91df1553",
+      "target_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A describes the 'user document upload workflow', which includes steps like 'user selects files' and 'clicks 'start ingest''.",
+        "Entity B defines the 'upload input validation and error handling' rules, such as rejecting files with unsupported extensions and disabling the 'start ingest' button while a request is in-flight."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A is a workflow that generates a 'knowledge diff' and displays 'added, removed, and modified knowledge sections'.",
+        "Entity B is an action item to decide on a 'report download feature' for the 'comparison results'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_document_upload_workflow_91df1553",
+      "target_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A description: '4. clicks 'start ingest' to begin processing. 5. a row appears in the table with a 'processing' status. 6. when complete, the status changes to 'extracted'.'",
+        "Entity B description: 'document extraction is an asynchronous process that begins immediately after a successful upload.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "target_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description: 'document extraction is an asynchronous process that begins immediately after a successful upload.'",
+        "Entity B's description: 'the system analyzes changes and displays added, removed, and modified knowledge sections.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "document_versioning_strategy_8da8d18d",
+      "target_entity_id": "network_interruption_during_upload_14d39789",
+      "relationship_type": "depends_on",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A describes a 'document versioning strategy' for all uploaded documents.",
+        "Entity B describes a risk of 'network interruption during upload'.",
+        "Both entities are concerned with the same core process: document upload."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "service_dependencies_17d5df36",
+      "target_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "relationship_type": "references",
+      "confidence": 0.75,
+      "evidence": [
+        "Entity A describes a decision on how uploads should be validated: 'uploads must be rejected if the file is empty or has an unsupported extension...'",
+        "Entity B describes the system components responsible for the upload functionality: 'the upload page depends on the upload service api, the extraction job queue, and the document metadata store.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "target_entity_id": "network_interruption_during_upload_14d39789",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A is a risk named 'network interruption during upload'.",
+        "Entity B is an action item named 'define batch upload limits'.",
+        "Both entities are concerned with the 'upload' process and are found in the same source document."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "target_entity_id": "service_dependencies_17d5df36",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity B's description states that the upload limit decision is 'depending on the async queue's health.'",
+        "Entity A's description lists the 'extraction job queue' as a core dependency for the upload page."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "resolve_open_questions_on_upload_behavio_ce973260",
+      "target_entity_id": "service_dependencies_17d5df36",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A describes the technical components of an upload system: 'the upload page depends on the upload service api, the extraction job queue, and the document metadata store.'",
+        "Entity B is an action item to make decisions about the features and behavior of the same upload system: 'decisions are needed on several topics: whether failed uploads should auto-retry, support for zip archives...'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "The description of entity A is 'the system analyzes changes and displays added, removed, and modified knowledge sections', which is a comparison workflow.",
+        "The description of entity B is 'an explicit warning needs to be added to the ui for cases where a comparison cannot be run because the extraction data for an old version is missing.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "target_entity_id": "display_logic_for_change_reasons_529d27c1",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A's description, step 5, mentions that the system 'displays added, removed, and modified knowledge sections.'",
+        "Entity A's description, step 6, mentions that 'user can expand modified cards to see old vs. new content.'",
+        "Entity B's description defines the logic for how 'modified item cards should include a 'why changed' reason...'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A describes a manual process: '1. user clicks `compare versions`... 3. user selects two versions. 4. user clicks `generate knowledge diff`.'",
+        "Entity B describes an unresolved decision about this process: 'a decision needs to be made between product's request for auto-running comparisons for speed and infrastructure's concern for cost control via manual runs.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A description: '...allowing users to compare non-adjacent versions...'",
+        "Entity B description: '...whether the comparison logic should include changes to links...'",
+        "Both entities originate from the same source document: 'doc02_product_privacy_policy.md'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "resolve_auto_run_vs_manual_run_conflict_770c34ea",
+      "target_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A is an action item to resolve a conflict between auto-running comparisons for speed versus manual runs for cost control.",
+        "Entity B is an action item to determine if the comparison logic should be expanded to include 'link changes'.",
+        "Both entities are of type 'action_item' and originate from the same source document 'doc02_product_privacy_policy.md'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "decide_on_strict_diff_mode_32d5e74c",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A's description: 'legal has requested an optional 'strict diff' mode that would show all wording-only changes'",
+        "Entity B's description: 'a determination needs to be made (tbd) on whether the comparison logic should include changes to links'",
+        "Both entities are of type 'action_item' and originate from the same source document 'doc02_product_privacy_policy.md'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "document_versioning_strategy_8da8d18d",
+      "target_entity_id": "persisted_document_metadata_4a2c2ef9",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A's description states: 'all uploaded documents must be versioned from day one.'",
+        "Entity B's description defines the data points to persist, which includes: 'document_version'."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "target_entity_id": "persisted_document_metadata_4a2c2ef9",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description defines the 'upload_status' as part of the core data points to persist: 'the core data points to persist for each uploaded document are: ... upload_status.'",
+        "Entity B's description states that its status must be persisted: 'the status of the job must persist, allowing the user to navigate away from the page and return later.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "target_entity_id": "persisted_document_metadata_4a2c2ef9",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description defines the core data points to persist for each document, which includes 'document_version'.",
+        "Entity B's description defines a rule for when a user attempts to 'compare the same version against itself'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "add_warning_for_missing_extraction_data_55e8ca0c",
+      "target_entity_id": "persisted_document_metadata_4a2c2ef9",
+      "relationship_type": "depends_on",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A defines the core data points to persist for each document, which includes 'document_version'.",
+        "Entity B describes an action item to add a warning when 'extraction data for an old version is missing', which is necessary for a comparison feature."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "document_versioning_strategy_8da8d18d",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "document versioning strategy owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "network_interruption_during_upload_14d39789",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "network interruption during upload owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "resolve_open_questions_on_upload_behavio_ce973260",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "resolve open questions on upload behavior and features owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "challenge_to_never_overwrite_rule_968eb641",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "challenge to 'never overwrite' rule owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "finalize_upload_status_definitions_09174b61",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "finalize upload status definitions owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "display_logic_for_change_reasons_529d27c1",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "display logic for change reasons owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+      "target_entity_id": "upload_page_ownership_74a86301",
+      "relationship_type": "owned_by",
+      "confidence": 0.72,
+      "evidence": [
+        "cost of auto-run compare feature owned_by upload page ownership"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "model_timeout_during_analysis_2ecad586",
+      "target_entity_id": "user_document_upload_workflow_91df1553",
+      "relationship_type": "blocks",
+      "confidence": 0.8,
+      "evidence": [
+        "Entity B's description states: '...which will interrupt the user workflow.'",
+        "Entity A is a 'user document upload workflow', a type of user workflow.",
+        "The 'analysis' mentioned in Entity B is a plausible event during the 'processing' step of Entity A's workflow."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "resolve_open_questions_on_upload_behavio_ce973260",
+      "target_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A (decision): 'uploads must be rejected if the file is empty or has an unsupported extension.'",
+        "Entity B (action_item): 'decisions are needed on several topics: ... support for zip archives...'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "model_timeout_during_analysis_2ecad586",
+      "target_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "relationship_type": "blocks",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity B's description states: 'the analysis model may time out during the diff generation process, which will interrupt the user workflow.'",
+        "Entity A's description details the 'generate knowledge diff workflow', which includes a step where 'the system analyzes changes'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "model_timeout_during_analysis_2ecad586",
+      "target_entity_id": "display_logic_for_change_reasons_529d27c1",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description: \"modified item cards should include a 'why changed' reason if the analysis model provides one.\"",
+        "Entity B's description: \"the analysis model may time out during the diff generation process, which will interrupt the user workflow.\""
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "target_entity_id": "upload_input_validation_and_error_handli_ef761fd5",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A's description: 'uploads must be rejected if the file is empty or has an unsupported extension...'",
+        "Entity B's description: 'the maximum number of files allowed in a single batch upload needs to be determined...'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "target_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "The description for Entity B, 'define batch upload limits', states that the decision depends on the 'async queue's health'.",
+        "Entity A is the 'asynchronous extraction process', which is the system that would be managed by this 'async queue'."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description establishes that 'all uploaded documents must be versioned'.",
+        "Entity B's description defines a specific behavior for '...compare the same version against itself...'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_document_upload_workflow_91df1553",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity B, 'user document upload workflow', describes the process of uploading documents.",
+        "Entity A, 'document versioning strategy', defines a core rule for how uploaded documents must be handled: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version and will not overwrite the old one.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "challenge_to_never_overwrite_rule_968eb641",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "blocks",
+      "confidence": 1,
+      "evidence": [
+        "Entity A establishes a decision: \"uploading a file with an existing name will create a new version and will not overwrite the old one.\"",
+        "Entity B is a risk named \"challenge to 'never overwrite' rule\".",
+        "Entity B's description states: \"the decision to never overwrite files is being challenged... this rule may need to be revisited.\""
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_confusion_with_non_adjacent_version_b61a305c",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A is a decision to implement document versioning.",
+        "Entity B is a risk concerning how users might interact with those versions, specifically when comparing non-adjacent ones (e.g., v1 vs. v5)."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "decide_on_strict_diff_mode_32d5e74c",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A defines the core 'document versioning strategy', stating that new versions are created instead of overwriting files.",
+        "Entity B is an action item to 'decide on 'strict diff' mode', which is a feature for comparing different versions of a document.",
+        "The concept of a 'diff mode' (Entity B) is functionally dependent on the existence of multiple document versions, which is the system established by Entity A."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "challenge_to_never_overwrite_rule_968eb641",
+      "target_entity_id": "user_document_upload_workflow_91df1553",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A describes a 'user document upload workflow' which involves ingesting and processing user-selected files.",
+        "Entity B describes a 'challenge to 'never overwrite' rule', specifically for use cases like 'replacing a file to fix a typo'."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "read_only_comparison_view_5fa93f65",
+      "target_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A: 'the compare versions screen must be read-only; users cannot edit content from this interface.'",
+        "Entity B: 'if only one version of a document exists, the compare feature should be disabled, accompanied by a tooltip explaining why.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "read_only_comparison_view_5fa93f65",
+      "target_entity_id": "error_handling_for_same_version_comparis_185be21c",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's canonical_name is 'read-only comparison view'.",
+        "Entity B's canonical_name is 'error handling for same version comparison'.",
+        "Entity A's description mentions 'the compare versions screen'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "target_entity_id": "read_only_comparison_view_5fa93f65",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A is a decision that the 'compare versions screen must be read-only'.",
+        "Entity B is a risk that 'the system cannot perform a diff' if an extraction has failed.",
+        "Both entities refer to the same 'comparison' functionality."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "decide_on_strict_diff_mode_32d5e74c",
+      "target_entity_id": "read_only_comparison_view_5fa93f65",
+      "relationship_type": "blocks",
+      "confidence": 0.8,
+      "evidence": [
+        "Entity A is a decision that 'the compare versions screen must be read-only'.",
+        "Entity B is an action item to 'decide on 'strict diff' mode' because a request from legal 'conflicts with the current decision to hide them' and 'this requirement needs to be resolved'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "read_only_comparison_view_5fa93f65",
+      "target_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A describes the 'compare versions screen' and its read-only nature.",
+        "Entity B describes a determination to be made about the 'comparison logic' for that screen, specifically regarding what content to diff.",
+        "The implementation of the comparison view (A) requires the comparison logic to be defined, which is the subject of the action item (B)."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "target_entity_id": "read_only_comparison_view_5fa93f65",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description: \"the compare versions screen must be read-only; users cannot edit content from this interface.\"",
+        "Entity B's description: \"an open question exists on whether to allow users to download a markdown report of the comparison results.\""
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "target_entity_id": "user_document_upload_workflow_91df1553",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description outlines a process where a document's status becomes 'extracted' after processing: '...when complete, the status changes to 'extracted'. 7. user can then view the extraction.'",
+        "Entity B's description defines a risk related to a failed extraction process: 'if an extraction process failed for an older version, the system cannot perform a diff...'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "target_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "relationship_type": "depends_on",
+      "confidence": 0.95,
+      "evidence": [
+        "Entity A describes the 'generate knowledge diff workflow' which begins when a 'user clicks `compare versions`'.",
+        "Entity B describes a decision for 'handling for single version documents', stating that 'if only one version of a document exists, the compare feature should be disabled'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "decide_on_strict_diff_mode_32d5e74c",
+      "target_entity_id": "handling_of_wording_only_changes_47a59c9f",
+      "relationship_type": "blocks",
+      "confidence": 1,
+      "evidence": [
+        "Entity B's description states: '...legal has requested an optional 'strict diff' mode that would show all wording-only changes, which conflicts with the current decision to hide them. this requirement needs to be resolved.'",
+        "Entity A's description is the decision to hide wording changes: 'changes that are only wording adjustments should not be shown as modified knowledge.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "target_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description mentions 'the compare feature should be disabled'.",
+        "Entity B's description discusses 'incomplete comparison' and the system's inability to 'perform a diff'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "handling_for_single_version_documents_90cafc8f",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description: '...the compare feature should be disabled...'",
+        "Entity B's description: '...whether the comparison logic should include changes to links...'",
+        "Both entities are from the same source document: 'doc02_product_privacy_policy.md'."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "incomplete_comparison_due_to_failed_extr_76b79b0e",
+      "target_entity_id": "display_logic_for_change_reasons_529d27c1",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description is 'modified item cards should include a 'why changed' reason if the analysis model provides one'.",
+        "Entity B's description is 'if an extraction process failed for an older version, the system cannot perform a diff against a newer, successful extraction'.",
+        "The 'why changed' reason is the output of a successful 'diff' or comparison."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "finalize_upload_status_definitions_09174b61",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity A's description: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version...'",
+        "Entity B's description: 'the official set of upload status values needs to be finalized with the backend team.'",
+        "Both entities originate from the same source document: 'doc01_engineering_platform.md'."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "user_document_upload_workflow_91df1553",
+      "target_entity_id": "supported_file_formats_11a47af5",
+      "relationship_type": "depends_on",
+      "confidence": 1,
+      "evidence": [
+        "Entity A's description states, 'user selects files (.md,.pdf,.txt)'.",
+        "Entity B's description states, 'for the initial release, only.md,.pdf, and.txt file formats will be supported for upload.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "persisted_document_metadata_4a2c2ef9",
+      "target_entity_id": "supported_file_formats_11a47af5",
+      "relationship_type": "references",
+      "confidence": 0.85,
+      "evidence": [
+        "Entity B defines the metadata to be persisted for an 'uploaded document', including the 'original_file_name'.",
+        "Entity A defines which 'file formats will be supported for upload'.",
+        "The 'original_file_name' in Entity B will necessarily have a file extension that must be one of the formats defined in Entity A."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "target_entity_id": "supported_file_formats_11a47af5",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description defines the file formats that 'will be supported for upload.'",
+        "Entity B's description states that the 'document extraction is an asynchronous process that begins immediately after a successful upload.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "define_batch_upload_limits_b15ea7a9",
+      "target_entity_id": "supported_file_formats_11a47af5",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A is a decision defining which file formats are supported for upload: '.md, .pdf, and .txt'.",
+        "Entity B is an action item to determine the maximum number of files allowed in a single batch upload.",
+        "Both entities are from the same source document, 'doc01_engineering_platform.md', and concern the file upload process."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "generate_knowledge_diff_workflow_1290edf0",
+      "target_entity_id": "supported_file_formats_11a47af5",
+      "relationship_type": "depends_on",
+      "confidence": 0.8,
+      "evidence": [
+        "Entity A's description: 'for the initial release, only .md, .pdf, and .txt file formats will be supported for upload.'",
+        "Entity B's description: '1. user clicks `compare versions` on a document page. ... 5. the system analyzes changes and displays added, removed, and modified knowledge sections.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "plan_for_future_ingestion_sources_3b83e936",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A's description states a rule for all uploaded documents: 'all uploaded documents must be versioned from day one.'",
+        "Entity B's description outlines a plan to 'ingest documents directly from sources like notion and google drive.'"
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "decide_on_report_download_feature_12fbbf7f",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.6,
+      "evidence": [
+        "Entity A describes a 'document versioning strategy' for all documents.",
+        "Entity B is an action item to 'decide on report download feature'.",
+        "A downloadable report is a type of document that would be generated and managed by the system."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "plan_for_future_ingestion_sources_3b83e936",
+      "target_entity_id": "persisted_document_metadata_4a2c2ef9",
+      "relationship_type": "references",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A defines the 'persisted document metadata', which includes a 'source_type' field, initially for 'manual_upload'.",
+        "Entity B describes a 'plan for future ingestion sources' like Notion and Google Drive."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "plan_for_future_ingestion_sources_3b83e936",
+      "target_entity_id": "asynchronous_extraction_process_b63bca6f",
+      "relationship_type": "references",
+      "confidence": 0.8,
+      "evidence": [
+        "Entity A description: document extraction is an asynchronous process that begins immediately after a successful upload.",
+        "Entity B description: future work includes building integrations to ingest documents directly from sources like notion and google drive."
+      ],
+      "document_ids": [
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "document_versioning_strategy_8da8d18d",
+      "relationship_type": "depends_on",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A: 'all uploaded documents must be versioned from day one. uploading a file with an existing name will create a new version and will not overwrite the old one.'",
+        "Entity B: 'a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.'"
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md",
+        "doc01_engineering_platform.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+      "target_entity_id": "default_comparison_versions_891d15c3",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A makes the decision that 'the default comparison view should be the latest version versus the immediately preceding version.'",
+        "Entity B identifies a risk that an 'auto-run compare feature... could lead to high operational costs.'",
+        "Both entities reference the same 'comparison' feature."
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    },
+    {
+      "source_entity_id": "evaluate_including_link_changes_in_diff_6954b886",
+      "target_entity_id": "cost_of_auto_run_compare_feature_63e1b19c",
+      "relationship_type": "blocks",
+      "confidence": 0.9,
+      "evidence": [
+        "Entity A: \"...the infrastructure team has raised concerns that this approach could lead to high operational costs. a manual run is preferred to control costs.\"",
+        "Entity B: \"a determination needs to be made (tbd) on whether the comparison logic should include changes to links, not just knowledge items.\""
+      ],
+      "document_ids": [
+        "doc02_product_privacy_policy.md"
+      ],
+      "model_version": "gemini-2.5-pro"
+    }
+  ]
+}
