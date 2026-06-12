@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { resolve, extname, basename } from "node:path";
 import { GoogleGenAI } from "@google/genai";
@@ -9,8 +10,8 @@ import { linkEntities } from "./linker.js";
 import { generateImpactReport } from "./impact.js";
 
 const CONFIG = {
-  GOOGLE_AI_API_KEY: "AIzaSyAf-vA7icut_Op6wHZhPwiOdPf8stIYvhY",
-  GEMINI_MODEL: "gemini-2.5-pro",
+  GOOGLE_AI_API_KEY: process.env.GOOGLE_AI_API_KEY?.trim() || "",
+  GEMINI_MODEL: process.env.GEMINI_MODEL?.trim() || "gemini-2.5-pro",
   ENABLE_FALLBACK_EXTRACTION: false,
 };
 
@@ -150,14 +151,10 @@ async function main() {
   logStageEnd("discover_docs", discoverStart, `files=${files.length}`);
 
   const authStart = logStageStart("resolve_api_key");
-  const resolvedApiKey =
-    process.env.GOOGLE_AI_API_KEY && process.env.GOOGLE_AI_API_KEY.trim()
-      ? process.env.GOOGLE_AI_API_KEY.trim()
-      : CONFIG.GOOGLE_AI_API_KEY;
-
-  if (!resolvedApiKey || resolvedApiKey.includes("PASTE_YOUR")) {
+  const resolvedApiKey = CONFIG.GOOGLE_AI_API_KEY;
+  if (!resolvedApiKey) {
     throw new Error(
-      "Batch runner requires a real Gemini API key. Set CONFIG.GOOGLE_AI_API_KEY in src/batch-runner.js or export GOOGLE_AI_API_KEY.",
+      "Batch runner requires GOOGLE_AI_API_KEY in .env.",
     );
   }
   logStageEnd("resolve_api_key", authStart, "api_key=configured");

@@ -1,0 +1,12 @@
+node_modules/
+.env
+.DS_Store
+*.log
+
+# generated local artifacts
+knowledge.json
+batch_knowledge.json
+entities.json
+item_entity_map.json
+relationships.json
+impact_report.json

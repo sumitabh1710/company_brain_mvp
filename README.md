@@ -13,14 +13,15 @@ This repository contains:
    npm install
    ```
 
-2. Configure API settings:
+2. Create env file:
 
-   - `src/mvp-runner.js` for MVP-1
-   - `src/batch-runner.js` for MVP-2
+   ```bash
+   cp .env.example .env
+   ```
 
-   Set:
-   - `CONFIG.GOOGLE_AI_API_KEY`
-   - `CONFIG.GEMINI_MODEL` (default `gemini-2.5-pro`)
+3. Edit `.env` and set:
+   - `GOOGLE_AI_API_KEY`
+   - `GEMINI_MODEL` (optional, default `gemini-2.5-pro`)
 
 ## MVP-1 (single document)
 
@@ -83,6 +84,6 @@ Final summary logs:
 
 ## Notes
 
-- MVP uses hardcoded key config by request.
+- Both runners now read credentials from `.env` via `dotenv`.
 - `src/batch-runner.js` requires a real Gemini API key and does not silently fall back.
-- Do not use hardcoded secrets in production.
+- `.env` is gitignored; use `.env.example` as template.

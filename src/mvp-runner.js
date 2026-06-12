@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
@@ -6,10 +7,9 @@ import { ALLOWED_TYPES, buildExtractionPrompt } from "./prompts.js";
 import { normalizeItem } from "./normalize.js";
 import { diffKnowledge } from "./diff.js";
 
-// MVP only: hardcoded key by request, do not use this style in production.
 const CONFIG = {
-  GOOGLE_AI_API_KEY: "AIzaSyAf-vA7icut_Op6wHZhPwiOdPf8stIYvhY",
-  GEMINI_MODEL: "gemini-2.5-pro",
+  GOOGLE_AI_API_KEY: process.env.GOOGLE_AI_API_KEY?.trim() || "",
+  GEMINI_MODEL: process.env.GEMINI_MODEL?.trim() || "gemini-2.5-pro",
 };
 
 const KNOWLEDGE_FILE = resolve(process.cwd(), "knowledge.json");
@@ -87,8 +87,8 @@ async function saveKnowledge(sourcePath, items) {
 }
 
 async function main() {
-  if (!CONFIG.GOOGLE_AI_API_KEY || CONFIG.GOOGLE_AI_API_KEY.includes("PASTE_YOUR")) {
-    throw new Error("Set CONFIG.GOOGLE_AI_API_KEY in src/mvp-runner.js before running.");
+  if (!CONFIG.GOOGLE_AI_API_KEY) {
+    throw new Error("Set GOOGLE_AI_API_KEY in .env before running.");
   }
 
   const inputPath = process.argv[2];
